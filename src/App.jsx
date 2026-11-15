@@ -5,6 +5,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Base44Logo } from "@/components/Base44Logo";
 import { Plus, Trash2, CheckCircle2 } from "lucide-react";
+import { AdminGate } from "@/seeds/AdminGate";
+import { AskAssistant } from "@/seeds/AskAssistant";
+import { Testimonials } from "@/seeds/Testimonials";
+import { VipPerks } from "@/seeds/VipPerks";
+import { WelcomeBanner } from "@/seeds/WelcomeBanner";
 
 const Task = base44.entities.Task;
 
@@ -131,6 +136,13 @@ export default function App() {
           )}
         </div>
 
+        <WelcomeBanner />
+        <Testimonials />
+        <VipPerks />
+        <AskAssistant />
+        <AdminGate>
+          <p>Admin tools unlocked.</p>
+        </AdminGate>
         {/* Footer */}
         {completedCount > 0 && (
           <div className="mt-8 text-center">

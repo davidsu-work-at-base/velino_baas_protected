@@ -19,3 +19,4 @@ dist
 .app.json*
 .types/
 base44/.app.jsonc
+package-lock.json
