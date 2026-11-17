@@ -1,5 +1,5 @@
 {
-  "name": "WF branch check",
+  "name": "WF branch check renamed",
   "description": "Sends a hello email every day at 9am",
   "trigger": {
     "condition": null,
