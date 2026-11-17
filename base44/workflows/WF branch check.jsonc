@@ -1,0 +1,46 @@
+{
+  "name": "WF branch check renamed",
+  "description": "Sends a hello email every day at 9am",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 9 * * *",
+      "one_time_date": null,
+      "timezone": "Asia/Jerusalem",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "wf_branch_check",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "send_hello": {
+          "call": "send_email",
+          "with": {
+            "template_name": "WFHello",
+            "to": "davidsu@base44.com",
+            "description": "Says hello and links to the app"
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Send hello email",
+            "description": "Daily hello"
+          }
+        }
+      }
+    ]
+  }
+}
