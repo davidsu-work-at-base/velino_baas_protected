@@ -1,0 +1,39 @@
+{
+  "name": "PhoneSecProbe",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Probe title"
+    },
+    "secret_note": {
+      "type": "string",
+      "description": "A note only admins should read"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

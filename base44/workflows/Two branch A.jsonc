@@ -1,0 +1,46 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 8 * * *",
+      "one_time_date": null,
+      "timezone": "Asia/Jerusalem",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "name": "Two branch A",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "two_branch_a",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "send_a_ran_email": {
+          "call": "send_email",
+          "with": {
+            "template_name": "DailyRunA",
+            "to": "davidsu@base44.com",
+            "description": "Says A ran"
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Send email",
+            "description": "A ran"
+          }
+        }
+      }
+    ]
+  },
+  "description": "Every day at 08:00, sends an email saying A ran"
+}
