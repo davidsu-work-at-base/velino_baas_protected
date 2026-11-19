@@ -1,0 +1,47 @@
+{
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 9 * * *",
+      "one_time_date": null,
+      "timezone": "Asia/Jerusalem",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "name": "Two branch B",
+  "description": "Sends a 'B ran' email every day at 09:00",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "two_branch_b",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "send_ran_email": {
+          "call": "send_email",
+          "with": {
+            "template_name": "TwoBranchB",
+            "to": "davidsu@base44.com",
+            "category": "transactional",
+            "description": "Says that branch B's daily run happened"
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Send 'B ran' email",
+            "description": "To the app owner"
+          }
+        }
+      }
+    ]
+  }
+}
