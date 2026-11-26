@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@base44/sdk": "^0.8.63",
-    "@base44/vite-plugin": "^1.0.53",
+    "@base44/vite-plugin": "^1.0.55",
     "lodash": "4.17.20",
     "lucide-react": "^0.475.0",
     "minimist": "1.2.5",
